@@ -1,0 +1,104 @@
+﻿.nav-menu {
+    font-size: 30px;
+}
+
+
+.icon {
+    width: 30px;
+}
+
+.subicon {
+    width: 28px;
+}
+
+.tripimg {
+max-width:50%;
+}
+
+/********亞芝-20230810-直接到class在main標籤上**********/
+/******* 如果要更動導覽列下面的寬度改layout(<main role="main" class="pb-3 mt-3 col-10">)中的col-10**********/
+/*main {*/
+/*padding: 0 10% 0 10%;*/
+/*}*/
+
+footer {
+    background-color: #155074;
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* 保留原來的padding值 */
+    height: 200px;
+    margin-top: 20px; /* 添加margin-top值，將footer與其他元素分隔開 */
+    clear: both; /* 清除浮動 */
+    position: relative;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+    .social-icons a {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+/**************************************20230809導覽列新增樣式***********************************************************/
+.nav-item > a,
+.navbar-brand {
+    text-decoration: none;
+    color: #FFFFF4;
+}
+
+    .nav-item > a:visited,
+    .navbar-brand:visited {
+        color: #FFFFF4;
+    }
+
+    .nav-item > a:hover,
+    .navbar-brand:hover {
+        color: #fff ;
+    }
+
+/*.navbar {
+    background-color: #155074;
+}*/
+
+.navbar {
+    background-color: #155074;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* 陰影效果 */
+    border: none;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #FFFFFF;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: #1A6BAF; /* 鼠標懸停時的背景顏色 */
+    }
+/**************************************20230809導覽列新增樣式***********************************************************/
+
+.loginAlert {
+    color: darkred;
+    font-weight:bold;
+}
+
+#all-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    /* fallback height */
+    min-height: 100vh;
+}
+

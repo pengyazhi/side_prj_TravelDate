@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\prj_Traveldate Core.props" />
+</Project>

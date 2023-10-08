@@ -1,0 +1,464 @@
+﻿* {
+    font-family: '微軟正黑體';
+}
+/***結帳共通*************************************************************/
+.cart_body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.Cart-Common-btn {
+    margin: 0.3em 0;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background: linear-gradient(to bottom right, #F8FDCF, #FAFBF1);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #202020;
+}
+.Header {
+    margin: 1% 0;
+    /*width: 75%;*/
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Heading {
+    font-size: 30px;
+    font-weight: 700;
+    color: #155074;
+}
+.image-box {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+    .image-box .prodimg {
+        width: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+.CommonButton {
+    display: block;
+    margin: 3% 0;
+    width: 70%;
+    height: 50px;
+    border: none;
+    background: linear-gradient(to bottom right, #F8FDCF, #E2F6CA);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #202020;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+.cancelButton {
+    margin: 3% 0;
+    width: 70%;
+    height: 50px;
+    border: none;
+    background: linear-gradient(to bottom right, #c3c0c0, #909090);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #202020;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+.prodcb, #selectall, .checkall {
+    display: none;
+}
+
+.CartIcon {
+    width: 32px;
+    height: 32px;
+    margin-right:0.5em;
+}
+
+.CartIconbtn {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+    .CartIconbtn:hover {
+        opacity: 0.7;
+    }
+
+.form-check-input:checked {
+    background-color: #155074;
+    border-color: #155074;
+}
+
+.hover-smokewhite:hover {
+    background-color: whitesmoke;
+}
+
+/***麵包屑*************************************************************/
+.Steps {
+    /*width: 75%;*/
+    text-align:left;
+}
+
+.Step_Current {
+    font-weight: bold;
+    color: #3888BD;
+}
+
+.breadcrumb{
+    background-color: transparent;
+}
+
+
+/***購物車*************************************************************/
+.Cart-Container {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.Cart-Items {
+    margin: 0.5em auto;
+    padding: 0.5em 2em; 
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .Cart-Items:hover{
+        background-color: whitesmoke;
+    }
+.about {
+    height: 100%;
+    width: 40%;
+}
+
+.title {
+    margin: 2% 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #155074;
+}
+
+.subtitle {
+    line-height: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #909090;
+}
+
+.counter {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.count {
+    font-size: 20px;
+    font-weight: 900;
+    color: #155074;
+}
+
+.prices {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.amount {
+    padding-top: 20px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #155074;
+}
+
+.save {
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1687d9;
+    cursor: pointer;
+}
+
+.remove {
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #E44C4C;
+    cursor: pointer;
+}
+
+
+.checkout {
+    margin: 1%;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.totalPriceBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Subtotal {
+    font-size: 20px;
+    font-weight: 700;
+    color: #155074;
+    margin: 2% 0;
+}
+
+.items {
+    font-size: 14px;
+    font-weight: 500;
+    color: #909090;
+    line-height: 10px;
+    text-align: center;
+}
+
+.total-amount {
+    font-size: 30px;
+    font-weight: 800;
+    color: #155074;
+}
+
+
+
+.SelectAll {
+    width: 80%;
+    text-align: start;
+}
+
+
+..card-img-top {
+    height: 172px;
+}
+
+.headerbox {
+    padding: 0.6em;
+    margin: 0.3em 0;
+}
+
+.editbox {
+    border: 1px solid #3888BD;
+    border-radius: 10px;
+    padding: 0.6em;
+    margin: 0.3em 0;
+}
+.editbox:hover{
+    background-color:whitesmoke;
+    cursor: pointer;
+}
+
+.editboxSelected {
+    background-color: whitesmoke;
+    border: 3px solid #3888BD;
+}
+
+.editqty{
+    width:60px;
+}
+/***填資料*************************************************************/
+.Confirm-All {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Confirm-Left {
+    width: 58%;
+}
+
+.Confirm-Right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Confirm-Container-Title {
+    display: flex;
+    align-items: center;
+}
+
+.Confirm-Arrow {
+    height: 25px;
+    width: 25px;
+    margin: 1% 3%;
+}
+
+.Confirm-Title {
+}
+
+.Confirm-Container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin: 3% auto;
+    width: 100%;
+}
+
+.Confirm-Container-Content {
+    margin: 1% 3%;
+}
+
+    .Confirm-Container-Content label {
+        margin: 1% 0;
+        color: #155074;
+    }
+
+.accordion-button {
+    padding: 0 1rem;
+    color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+    .accordion-button:not(.collapsed) {
+        padding: 0 1rem;
+        color: transparent;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+.confirm-coupon-content {
+    border-radius: 10px;
+    border: 1px solid #9BE8D8;
+    padding: 1em 1.5em;
+    display: flex;
+    margin: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.confirm-subtitle {
+    font-size:large;
+    font-weight: 600;
+    color: #155047;
+}
+
+.Confirm-Prod-Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:10px;
+}
+    .Confirm-Prod-Info .prodbox {
+        width: 70%;
+        margin:0.5em;
+    }
+
+.Confirm-summary {
+    margin: 5% 0 0 3%;
+    color: #800000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.Confirm-earnpoint {
+    float: right;
+    margin-right: 1em;
+}
+
+.Confirm-subtotal {
+    text-align: end;
+    font-size: 16px;
+    font-weight: 600;
+    color: #155074;
+}
+
+.Confirm-total {
+    text-align: end;
+    font-size: 20px;
+    font-weight: 600;
+    color: #155074;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.noCoupon {
+    color:dimgray;
+    text-align:center;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+
+.modal {
+     background-color: rgba(0,0,0,0.2); 
+}
+/***完成頁*************************************************************/
+.Complete-box {
+    width: 75%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.Complete-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #155074;
+}
+
+.Complete-content {
+    color: #155074;
+    width: 50%;
+    text-align: center;
+}
+
+
+
+/********************************/
+.imgComplete {
+    animation: zy 2.5s .15s linear infinite;
+    animation: zy 2.5s .15s linear infinite;
+    animation: zy 2.5s .15s linear infinite;
+    animation: zy 2.5s .15s linear infinite;
+}
+
+    @-webkit-keyframes zy {
+        10% {
+            transform: rotate(8deg);
+        }
+
+        20% {
+            transform: rotate(-3deg);
+        }
+
+        30% {
+            transform: rotate(2deg);
+        }
+
+        40% {
+            transform: rotate(-2deg);
+        }
+
+        50%, 100% {
+            transform: rotate(@deg);
+        }
+    }

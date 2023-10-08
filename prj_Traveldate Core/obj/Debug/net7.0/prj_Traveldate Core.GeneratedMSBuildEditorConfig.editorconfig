@@ -1,0 +1,325 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = prj_Traveldate_Core
+build_property.RootNamespace = prj_Traveldate_Core
+build_property.ProjectDir = C:\Users\yazhi\Desktop\repos\side_prj_traveldate\side_prj_TravelDate\prj_Traveldate Core\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\yazhi\Desktop\repos\side_prj_traveldate\side_prj_TravelDate\prj_Traveldate Core
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Analysis/SellAnalysis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hbHlzaXNcU2VsbEFuYWx5c2lzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Cart/CompleteOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb21wbGV0ZU9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Cart/ConfirmOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb25maXJtT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Cart/OrderError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxPcmRlckVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Cart/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Cart/ShoppingCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxTaG9wcGluZ0NhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Company/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Company/Password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Dashboard/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Emails/CouponEmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxzXENvdXBvbkVtYWlsVGVtcGxhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Emails/OrderEmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxzXE9yZGVyRW1haWxUZW1wbGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Emails/SimpleEmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxzXFNpbXBsZUVtYWlsVGVtcGxhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Error/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/ArticleView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cQXJ0aWNsZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/filteredBySort.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cZmlsdGVyZWRCeVNvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/filteredSchedules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cZmlsdGVyZWRTY2hlZHVsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/ForumList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cRm9ydW1MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/KeyWordForForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cS2V5V29yZEZvckZvcnVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/Region.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cUmVnaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/Replied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cUmVwbGllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Forum/ReplyToDiv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cUmVwbHlUb0Rpdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/HomePage/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVBhZ2VcSG9tZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/HomePage/Intro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVBhZ2VcSW50cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/CompanyLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29tcGFueUxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/CompanySignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29tcGFueVNpZ25VcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/CompanySignUp_o.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29tcGFueVNpZ25VcF9vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/ForgotPwd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRm9yZ290UHdkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/NotVerified.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTm90VmVyaWZpZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/PlatformLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUGxhdGZvcm1Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/RedirectTo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVkaXJlY3RUby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/ResetPwd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVzZXRQd2QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/SentResetMail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2VudFJlc2V0TWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/SignUp_o.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwX28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/VerifyMail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVmVyaWZ5TWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Login/VerifyMailSent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVmVyaWZ5TWFpbFNlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/addcomment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGFkZGNvbW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/addCompanion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGFkZENvbXBhbmlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/basicInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGJhc2ljSW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/commentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGNvbW1lbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/couponList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGNvdXBvbkxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/couponList2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGNvdXBvbkxpc3QyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/favoriteList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGZhdm9yaXRlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/forumList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXGZvcnVtTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/orderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXG9yZGVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/passwordChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXHBhc3N3b3JkQ2hhbmdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/showCompanion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXHNob3dDb21wYW5pb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Member/SignalR.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNpZ25hbFIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/AccountSuspend.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cQWNjb3VudFN1c3BlbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/Coupon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cQ291cG9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/Review.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cUmV2aWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/ReviewProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cUmV2aWV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Platform/Send.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cU2VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Product/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Product/ProductPreview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0UHJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Program/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbVxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Program/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbVxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Search/FilterByConditions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXEZpbHRlckJ5Q29uZGl0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Search/SearchList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFNlYXJjaExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Search/sortBy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXHNvcnRCeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Shared/_CartItemCountPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0SXRlbUNvdW50UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Trip/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Trip/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Trip/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yazhi/Desktop/repos/side_prj_traveldate/side_prj_TravelDate/prj_Traveldate Core/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8q1r4l0kwk

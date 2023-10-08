@@ -1,0 +1,431 @@
+﻿@using prj_Traveldate_Core.Models.MyModels;
+@model prj_Traveldate_Core.ViewModels.CConfirmOrderViewModel
+@{
+    ViewBag.Title = "確認訂購內容";
+    int count = 0;
+    int count_amount = 0;
+    decimal sum = 0;
+    decimal discount = 0;
+    decimal totalPrice = 0;
+    decimal getPoint = 0;
+}
+
+@using (Html.BeginForm())
+{
+    <div class="cart_body">
+        <div class="Header">
+            <h3 class="Heading">@ViewBag.Title</h3>
+        </div>
+        <div class="Steps">
+            <ol class="breadcrumb">
+                <li id="Step_cart" class="breadcrumb-item">購物車</li>
+                <li id="Step_Confirm" class="breadcrumb-item Step_Current">確認訂購內容</li>
+                <li id="Step_Pay" class="breadcrumb-item">付款</li>
+                <li id="Step_Finish" class="breadcrumb-item">訂購完成</li>
+            </ol>
+        </div>
+        <div class="Confirm-All">
+            <div class="Confirm-Left">
+                <div class="accordion" id="accordionExample">
+                    <div class="Confirm-Container">
+                        <h2 class="accordion-header Confirm-Container-Title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h4 class="title Confirm-Title">訂購人資料</h4>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body Confirm-Container-Content">
+                                <div class="traveler-info">
+                                    <label for="lastname">　　　姓氏　</label>
+                                    <input type="text" name="lastname" id="lastname" size="30" value="@Model.member.LastName" disabled="disabled">
+                                    <br />
+                                    <label for="firstname">　　　名字　</label>
+                                    <input type="text" name="firstname" id="firstname" size="30" value="@Model.member.FirstName" disabled="disabled">
+                                    <br />
+                                    <label for="idnumber">身份證字號　</label>
+                                    <input type="text" name="idnumber" id="idnumber" size="30" value="@Model.member.Idnumber" disabled="disabled">
+                                    <br />
+                                    <label for="phone">　聯絡電話　</label>
+                                    <input type="text" name="phone" id="phone" size="30" value="@Model.member.Phone" disabled="disabled">
+                                    <br />
+                                    <label for="bdate">　出生日期　</label>
+                                    <input type="date" name="bdate" id="bdate" size="30" value="@string.Format("{0:yyyy-MM-dd}",Model.member.BirthDate)" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Confirm-Container">
+                        <h2 class="accordion-header Confirm-Container-Title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <h4 class="title Confirm-Title">商品詳情</h4>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                @foreach(var item in Model.orders)
+                                {
+                                    <div class="accordion mb-2" id="accordionProd">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingP_@count">
+                                                <input type="hidden" name="vm.ods[@count].TripId" value="@item.tripID">
+                                                <input type="hidden" name="vm.ods[@count].OrderDetailsId" value="@item.orderDetailID">
+                                                <button class="accordion-button mt-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP_@count" aria-expanded="true" aria-controls="collapseP_@count">
+                                                <div class="Confirm-Prod-Info">
+                                                    <div class="image-box" style="width:25%;">
+                                                        <img class="prodimg" src="~/images/@item.ImagePath" />
+                                                    </div>
+                                                    <div class="prodbox">
+                                                        <h5 class="confirm-subtitle" style="margin:0.3em 0;">
+                                                                @item.planName
+                                                        </h5>
+                                                        <h6 class="subtitle">@item.date</h6>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                            <div id="collapseP_@count" class="accordion-collapse collapse show" aria-labelledby="headingP_@count" data-bs-parent="#accordionProd">
+                                            <div class="accordion-body">
+@*                                                    <div class="confirm-subtitle mt-3 mb-3 d-flex ">
+                                                        <img src="~/icons/icons8-palm-tree-48.png" class="CartIcon">
+                                                        旅客代表人
+                                                    </div>
+                                                    <div class="Confirm-Container-Content">
+                                                        <div class="radio-group">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radio_traveler_@count" id="traveler_same_@count" checked>
+                                                                <label class="form-check-label" for="traveler_same_@count">
+                                                                    同訂購人
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radio_traveler_@count" id="traveler_choose_@count">
+                                                                <label class="form-check-label" for="traveler_choose_@count">
+                                                                    自旅伴名單中選擇
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radio_traveler_@count" id="traveler_input_@count">
+                                                                <label class="form-check-label" for="traveler_input_@count">
+                                                                    自行填寫
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Confirm-Container-Content">
+                                                            <div class="traveler-info">
+                                                                <label for="lastname">　　　姓氏　</label>
+                                                                <input type="text" name="lastname" id="lastname" size="30" value="@Model.member.LastName" disabled="disabled">
+                                                                <br />
+                                                                <label for="firstname">　　　名字　</label>
+                                                                <input type="text" name="firstname" id="firstname" size="30" value="@Model.member.FirstName" disabled="disabled">
+                                                                <br />
+                                                                <label for="idnumber">身份證字號　</label>
+                                                                <input type="text" name="idnumber" id="idnumber" size="30" value="@Model.member.Idnumber" disabled="disabled">
+                                                                <br />
+                                                                <label for="phone">　聯絡電話　</label>
+                                                                <input type="text" name="phone" id="phone" size="30" value="@Model.member.Phone" disabled="disabled">
+                                                                <br />
+                                                                <label for="bdate">　出生日期　</label>
+                                                                <input type="text" name="bdate" id="bdate" size="30" value="@string.Format("{0:yyyy/MM/dd}",Model.member.BirthDate)" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+*@
+                                                    @if (item.ProductTypeID == 2)
+                                                    {
+                                                        for(int i = 1; i < item.quantity; i++)
+                                                        {
+                                                    <div class="confirm-subtitle mt-3 mb-3 d-flex ">
+                                                        <img src="~/icons/icons8-palm-tree-48.png" class="CartIcon">
+                                                        同行旅客-@(i)
+                                                    </div>
+                                                    <div class="Confirm-Container-Content">
+                                                        <div class="radio-group">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input companion_input" type="radio" name="radio_companion_@count-@i" id="companion_input_@count-@i" checked>
+                                                                <label class="form-check-label" for="companion_input_@count-@i">
+                                                                    自行填寫
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input companion_choose" type="radio" name="radio_companion_@count-@i" id="companion_choose_@count-@i">
+                                                                <label class="form-check-label" for="companion_choose_@count-@i">
+                                                                    自旅伴名單中選擇
+                                                                </label>
+                                                                <select class="ml-2 chooseCompanion" name="companion_@count-@i" style="display:none;">
+                                                                <option value="">請選擇同行旅伴</option>
+                                                                @for(int j = 0; j < Model.companions.Count(); j++)
+                                                                {
+                                                                    <option value="@Model.companions[j].CompanionId">@(Model.companions[j].LastName+Model.companions[j].FirstName)</option>
+                                                                }
+                                                                </select>
+                                                                <input type="hidden" class="itemNo" value="@count">
+                                                                <input type="hidden" class="companionNo" value="@i">
+                                                            </div>
+                                                        </div>
+                                                        <div class="Confirm-Container-Content">
+                                                            <div class="traveler-info">
+                                                                        <button type="button" class="btn btn-outline-secondary demobtn">DEMO-自行填寫</button>
+                                                                        <br />
+                                                                <input type="hidden" name="vm.companions[@count][@i].CompanionID" class="companionList">
+                                                                <label for="lastname">　　　姓氏　</label>
+                                                                <input type="text" name="vm.companions[@count][@i].LastName" class="lastname" size="30">
+                                                                <br />
+                                                                <label for="firstname">　　　名字　</label>
+                                                                <input type="text" name="vm.companions[@count][@i].FirstName" class="firstname" size="30">
+                                                                <br />
+                                                                <label for="idnumber">身份證字號　</label>
+                                                                <input type="text" name="vm.companions[@count][@i].Idnumber" class="idnumber" size="30">
+                                                                <br />
+                                                                <label for="phone">　聯絡電話　</label>
+                                                                <input type="text" name="vm.companions[@count][@i].Phone" class="phone" size="30">
+                                                                <br />
+                                                                <label for="bdate">　出生日期　</label>
+                                                                <input type="date" name="vm.companions[@count][@i].BirthDate" class="bdate" size="30">
+                                                            </div>
+                                                        </div>
+                                                            </div>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="hidden" name="vm.companions[@count][0].CompanionID">
+                                                    }
+                                                    <div class="confirm-subtitle mt-3 mb-3 d-flex ">
+                                                        <img src="~/icons/icons8-palm-tree-48.png" class="CartIcon">
+                                                        特殊需求備註
+                                                    </div>
+                                                    <div class="Confirm-Container-Content">
+                                                        <textarea name="vm.ods[@count].Note" class="form-control" id="order_note" rows="3"></textarea>
+                                                        <button type="button" class="btn btn-outline-secondary demobtnps">DEMO</button>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    count++;
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Confirm-Container">
+                        <h2 class="accordion-header Confirm-Container-Title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <span class="title Confirm-Title">使用點數及優惠</span>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="confirm-subtitle mt-3 mb-3 d-flex ">
+                                    <img src="~/icons/icons8-palm-tree-48.png" class="CartIcon">
+                                    使用優惠券
+                                </div>
+                                <button type="button" class="btn my-btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#couponModal">
+                                    選擇優惠券
+                                </button> <span id="usecoupon" class="ml-2" style="color:#155074;font-weight:bold;"></span>
+                                <input type="hidden" name="vm.newOrder.CouponListId" id="usecouponID"><br>
+                                <div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">目前可使用的優惠券</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                @{
+                                                    if (Model.coupons.Count > 0)
+                                                    {
+                                                        for (int i = 0; i < Model.coupons.Count; i++)
+                                                        {
+                                                            <div class="confirm-coupon-content">
+                                                            <div style="width:15%;">
+                                                            <img src="~/images/@Model.coupons[i].ImagePath" style="max-width:100%">
+                                                            </div>
+                                                                <div style="width:60%;">
+                                                                    <h5 id="couponName_@i">
+                                                                        @Model.coupons[i].CouponName
+                                                                    </h5>
+                                                                    <p>
+                                                                        @Model.coupons[i].Description
+                                                                    </p>
+                                                                    <input type="hidden" id="couponOriginal_@i" value="@(Model.coupons[i].Discount)">
+                                                                    @{
+                                                                        if (Model.coupons[i].Discount > 1)
+                                                                        {
+                                                                            <p id="couponDiscount_@i">折 @(Model.coupons[i].Discount) 元</p>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <p id ="couponDiscount_@i">單筆訂單 @string.Format("{0:0.#}", (Model.coupons[i].Discount * 10)) 折</p>
+                                                                        }
+                                                                    }
+                                                                    <h6>使用期限：@string.Format("{0:yyyy/MM/dd}",Model.coupons[i].DueDate.ToString())</h6>
+                                                                </div>
+                                                                <input type="hidden" value="@Model.coupons[i].CouponListId" id="couponID_@i">
+                                                                <input type="hidden" value="@i">
+                                                                <button type="button" class="btn btn-outline-secondary col-2 useCouponButton" data-bs-dismiss="modal" >使用</button>
+                                                            </div>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <h5 class="noCoupon">目前沒有可用的優惠券喔！</h5>
+                                                    }
+                                                }
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">不使用優惠券</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="confirm-subtitle mt-3 mb-3 d-flex ">
+                                    <img src="~/icons/icons8-palm-tree-48.png" class="CartIcon">
+                                    使用點數折抵
+                                </div>
+                                <div class="Confirm-Container-Content">
+                                    <h6 class="subtitle" style="margin-bottom:1em;">目前持有 @Model.member.Discount 點，1點可折抵1元。</h6>
+                                    <label for="usepoint">使用點數　</label>
+                                    <input type="number" name="vm.newOrder.Discount" id="usepoint" size="10" value="0" oninput="if(value>@Model.member.Discount)value=@Model.member.Discount;if(value<0)value=0">
+                                </div>
+                                <input type="hidden" id="pointsNow" value="@Model.member.Discount">
+                                <input type="hidden" id="coupondisc">
+                                <h5 class="Confirm-summary" id="totalDiscount">共可折抵 0 元</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Confirm-Right">
+                <div class="Confirm-Container">
+                    <div class="Confirm-Container-Title">
+                        <img src="~/icons/186405_available_checkmark_done_icon.png" class="Confirm-Arrow" />
+                        <span class="title Confirm-Title">訂單明細</span>
+                    </div>
+                    <div class="accordion-body">
+                        @foreach(var item in Model.orders)
+                        {
+                            <div class="hover-smokewhite p-1">
+                                <h5 class="confirm-subtitle" style="margin:0.3em 0;">
+                                    @item.planName
+                                </h5>
+                                <h6 class="subtitle">數量：@item.quantity</h6>
+                                <h6 class="subtitle">@item.date</h6>
+                                <h6 class="Confirm-subtotal">NTD @string.Format("{0:0}",((item.unitPrice-item.discount) * item.quantity))</h6>
+                                <input type="hidden" name="vm.ods[@count_amount].Quantity" value="@item.quantity">
+                                <input type="hidden" name="vm.ods[@count_amount].SellingPrice" value="@(item.unitPrice-item.discount)">
+
+                            </div>
+                            sum += (decimal)((item.unitPrice - item.discount) * item.quantity);
+                            count_amount++;
+                        }
+                        <hr style="width:100%;">
+                        <table>
+                            <tr><td class="col"><h6 class="Confirm-subtotal">商品金額 NTD</h6></td><td class="col-4"><h6 class="Confirm-subtotal">@string.Format("{0:0}",sum)</h6></td></tr>
+                            <tr><td class="col"><h6 class="Confirm-subtotal">折扣金額 NTD</h6></td><td class="col-4"><h6 class="Confirm-subtotal" id="totalDsc">0</h6></td></tr>
+                        </table>
+                        
+                        @{
+                            totalPrice = sum - discount;
+                            getPoint = Math.Ceiling(totalPrice / 100);
+                        }
+                        <input type="hidden" id="prodsum" value="@sum">
+                        <input type="hidden" name="vm.checkoutAmount" id="checkuotamount" value="@totalPrice">
+                        <h6 class="Confirm-total col" id="checkuotamount_lbl">總金額 NTD @string.Format("{0:0}",totalPrice)</h6>
+                        <span class="badge bg-secondary Confirm-earnpoint" id="getpt">共可獲得 @getPoint 點!</span>
+
+                    </div>
+                </div>
+                <input type="submit" asp-action="Payment" id="ConfirmAndPay" class="btn my-btn-primary btn-lg" style="margin:1em auto; width:60%" value="前往付款" />
+                @Html.ActionLink("回到購物車","ShoppingCart","Cart",null,new {@class="btn btn-outline-secondary btn-lg", style="margin:0 auto;width:60%"})
+                @Html.ActionLink("DEMO揪團結帳","ArticleView","Forum",new{id =  ViewBag.demoPay,returnType=0},new {@class="btn btn-outline-secondary btn-lg", style="margin:10px auto ;width:60%"})
+            </div>
+
+        </div>
+    </div>
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/Cart.css" asp-append-version="true" />
+}
+
+@section Scripts{
+    <script src="~/js/jsCart.js"></script>
+    <script>
+
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2)
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+
+
+        async function GetCompanionData(id) {
+            const response = await fetch(`@Url.Content("/CartApi/GetCompanionByID")?id=${id}`);
+            const data = await response.json();
+            return data;
+        }
+
+
+        $('.chooseCompanion').change(function () {
+            const selectedOption = $(this).find('option:selected');
+            const lastNameInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.lastname');
+            const firstNameInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.firstname');
+            const idNumberInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.idnumber');
+            const phoneInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.phone');
+            const birthDateInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.bdate');
+            const companionIDInput = $(this).closest('.radio-group').next('.Confirm-Container-Content').find('.companionList');
+            const id = $(this).val();
+
+
+            if (selectedOption.val() !== "") {
+                companionIDInput.val(id);
+                const data = GetCompanionData(id);
+                data.then(d => {
+                    console.log(d);
+                    lastNameInput.val(d.lastName);
+                    firstNameInput.val(d.firstName);
+                    idNumberInput.val(d.idnumber);
+                    phoneInput.val(d.phone);
+                    birthDateInput.val(formatDate(d.birthDate));
+                })
+                lastNameInput.prop("disabled", true)
+                firstNameInput.prop("disabled", true)
+                idNumberInput.prop("disabled", true)
+                phoneInput.prop("disabled", true)
+                birthDateInput.prop("disabled", true)
+
+            } else {
+                // 如果選擇了空選項，則清空輸入欄位
+                lastNameInput.val("");
+                firstNameInput.val("");
+                idNumberInput.val("");
+                phoneInput.val("");
+                birthDateInput.val("");
+            }
+        });
+
+
+        $('.demobtn').on('click', function(){
+            $(this).siblings('.lastname').val("陳");
+            $(this).siblings('.firstname').val("雨心");
+            $(this).siblings('.idnumber').val("A224168754");
+            $(this).siblings('.phone').val("0934856753");
+            $(this).siblings('.bdate').val("1999-04-21");
+        })
+
+        $('.demobtnps').on('click', function(){
+            $(this).siblings('textarea').text("不要香菜");
+        })
+    </script>
+}

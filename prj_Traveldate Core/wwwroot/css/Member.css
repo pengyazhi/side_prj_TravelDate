@@ -1,0 +1,153 @@
+﻿*{
+    padding:0;
+    margin:0;
+}
+
+h3 {
+    margin-top:1em;
+    color: #00000098;
+}
+
+.black-link {
+    color: #155074;
+/*    color: red; */
+    text-decoration: none;
+}
+
+    .black-link:hover {
+        /*        color: #white;*/
+        /*        color: #F8FDCF;*/
+        font-size: 22px;
+        color: #6b6e85;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 25px 0 25px -15px #e9ecef, 0 25px 25px -15px #e9ecef, -25px 0 25px -15px #e9ecef, 0 -25px 25px -15px #e9ecef;
+    }
+
+.black-link2 {
+    color: white;
+    text-decoration: none;
+}
+
+.leftarea > li {
+    text-align: center;
+
+}
+
+.lgmenu > .menuItem {
+    background-color: whitesmoke;
+}
+
+.leftarea > .menuItem:first-child {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.leftarea > .menuItem:last-child {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+
+.table {
+    width: 80%;
+    border-collapse: separate;
+    margin-top: 0px;
+    table-layout: fixed;
+    word-break: break-all;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: start;
+    word-break: break-all;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+height {
+    height: 10px;
+    max-height: 10px
+}
+
+.userIcon {
+    width: 120px;
+    height: 120px;
+    margin:auto;
+}
+
+.Member {
+    padding-top: 16px;
+    text-align: center;
+    border-color: white;
+    border-radius: 10px;
+}
+
+.col-md-9 {
+/*    background-color: white;
+    border-radius: 10px;
+    padding: 0 3em 1em 3em;
+}*/
+    /*.col-md-8 {
+    background-color: white;
+    border-radius:10px;
+}*/
+    .carousel-inner {
+    border-radius: 10px;
+    top: -100px;
+}
+/*.passwordposition1 {
+    margin-left: 525px
+}*/
+.row {
+    //position: absolute;
+    float: left;
+    clear: both;
+    display:flow;
+    box-sizing:border-box;
+}
+#rightPanel {
+    /*margin-left: 2em;*/ /* Adjust the left margin to create space between rightPanel and the cells */
+    border-radius: 10px;
+    background-color: white;
+   // float: none;
+    //clear: both;
+    margin-left: 350px;
+    top: -500px;
+    //margin-bottom: 200px;
+    //display: flex;
+    padding-left:32px;
+    width: 200%;
+    //box-sizing: border-box;
+}
+/*==============================================我是分隔線=================================================*/
+/*20230819 0100 金新增*/
+.left {
+    left: -20PX;
+    top: 10px;
+    bottom: 100px;
+    float: left;
+}
+.container mt-2 {
+    /*大容器*/
+    justify-content: space-between;
+    display: flex;
+}
+#table_id /*_wrapper.dataTables_wrapper*/ {
+    /*右半邊 - 內容容器- DataTable*/
+    /*    left: -500PX;
+    top: -615px;
+    bottom: 50px;
+    //position: center;*/
+    width: 150%;
+    /*height: 80% ;
+    float:none;*/
+}
+*==============================================我是分隔線=================================================*/

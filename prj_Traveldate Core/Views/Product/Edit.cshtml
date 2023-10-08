@@ -1,0 +1,515 @@
+﻿@model prj_Traveldate_Core.Models.MyModels.CProductWrap
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <div class="sidebar-brand d-flex align-items-center justify-content-center">
+            <div class="sidebar-brand-icon">
+                <img src="~/icons/navigation.png" class="icon" id="sidebarToggleTop" />
+            </div>
+            <div class="sidebar-brand-text mx-3 nav-menu">主選單</div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="~/Dashboard/List">
+                <img src="~/icons/home.png" class="subicon" />
+                <span>首頁</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCompany"
+               aria-expanded="true" aria-controls="collapseCompany">
+                <img src="~/icons/company.png" class="subicon" />
+                <span>旅行社專區</span>
+            </a>
+            <div id="collapseCompany" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="~/Company/Edit">帳號管理</a>
+                    <a class="collapse-item" href="~/Company/Password">更改密碼</a>
+                </div>
+            </div>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+               aria-expanded="true" aria-controls="collapseUtilities">
+                <img src="~/icons/edit.png" class="subicon" />
+                <span>產品管理</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="~/Product/List">產品列表</a>
+                    <a class="collapse-item" href="~/Product/Create">新增產品</a>
+                    <a class="collapse-item" href="~/Trip/List">出團日期</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnalyze"
+               aria-expanded="true" aria-controls="collapseAnalyze">
+                <img src="~/icons/company.png" class="subicon" />
+                <span>數據分析</span>
+            </a>
+            <div id="collapseAnalyze" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="~/Analysis/SellAnalysis">銷售分析</a>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Begin Page Content -->
+
+            <div class="container-fluid">
+                <h2>編輯產品</h2>
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">基本資料</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">產品描述</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">產品內容</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tripdetail" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">行程編輯</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    @*<!-- Basic Card Example -->*@
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary cardTitle">基本資料</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <input asp-for="CompanyId" type="hidden" value="@Model.CompanyId" />
+                                            <input asp-for="ProductId" type="hidden" value="@Model.ProductId" />
+                                            <div class="form-group">
+                                                <label class="control-label">產品名稱</label>
+                                                <input asp-for="ProductName" class="form-control" />
+                                                <span asp-validation-for="ProductName" class="text-danger"></span>
+                                            </div>
+
+                                            <div class=" form-group">
+                                                <label class="control-label">產品類型</label>
+                                                @* <select asp-for="ProductTypeId" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                    @foreach (ProductTypeList type in Model.types)
+                                                    {
+                                                        <option value="@type.ProductTypeId">@type.ProductType</option>
+                                                    }
+
+                                                </select> *@
+                                                <div>
+                                                    @{
+                                                        int j = 0;
+                                                        foreach (ProductTypeList type in Model.types)
+                                                        {
+                                                                    <input asp-for="ProductTypeId" type="radio" value="@type.ProductTypeId" id="typeradio @j" />
+                                                                    <label for="typeradio @j" class="control-label">@type.ProductType</label>
+                                                            j++;
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+
+                                            <div class=" form-group">
+                                                <label class="control-label">所在國家</label>
+                                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                    @foreach (string type in Model.countries)
+                                                    {
+                                                        <option>@type</option>
+                                                    }
+                                                </select>
+                                            </div>
+
+                                            <div class=" form-group">
+                                                <label class="control-label">所在城市</label>
+                                                <select asp-for="CityId" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                    @foreach (CityList type in Model.cities)
+                                                    {
+                                                        <option value="@type.CityId">@type.City</option>
+                                                    }
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label">產品地址</label>
+                                                <input asp-for="Address" class="form-control" />
+                                                <span asp-validation-for="Address" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">輪播圖</label>
+                                                <input name="photos" type="file" class="form-control" id="photoInput" multiple />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary cardTitle">產品標籤</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            @foreach (var c in Model.categoryAndTags)
+                                            {
+
+                                                <div class="controls-display-row category-click">
+                                                    <span class="fs-5">@Html.DisplayFor(modelItem => c.category)</span>
+                                                    <div class="d-flex justify-content-end">
+                                                        <img id="arrow_bottom_down" src="~/icons/arrow_bottom_down_icon.png">
+                                                        <img id="arrow_top_up" src="~/icons/arrow_top_up_icon.png">
+                                                    </div>
+                                                </div>
+                                                <div class="ms-lg-4 filter-block-toggle">
+                                                    <ul class="list-unstyled m">
+                                                        @{
+                                                            int id = 0;
+                                                            foreach (var t in c.productTags.Distinct())
+                                                            {
+                                                                        <li class=" d-flex align-items-center divide-line my-w-80-percent">
+                                                                            <input name="Tags" type="checkbox" value="@t.ProductTagDetailsId" @(Model.Tags.Contains(t.ProductTagDetailsId) ? "checked" : "") />
+                                                                            <span>@Html.DisplayFor(modelItem => t.ProductTagDetailsName)</span>
+                                                                        </li>
+                                                                id++;
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                               </div>
+
+                            </div>
+                            <button type="button" class="btn btn-primary next-tab">下一頁</button>
+                        </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @*<!-- Basic Card Example -->*@
+                                        <div class="card shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary cardTitle">產品描述</h6>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <div class="form-group">
+                                            <label class="control-label">簡介(出現在搜尋頁面)</label>
+                                                    <input asp-for="OutlineForSearch" class="form-control" />
+                                                    <span asp-validation-for="OutlineForSearch" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="form-group">
+                                            <label class="control-label">產品特色</label>
+                                                    <textarea asp-for="Outline" class="form-control" rows="10"></textarea>
+                                                    <span asp-validation-for="Outline" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="form-group">
+                                            <label class="control-label">產品描述</label>
+                                                <textarea asp-for="Description" class="form-control col-lg-12" rows="10"></textarea>
+                                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                     </div>
+                                </div>
+                            <button type="button" class="btn btn-primary prev-tab">上一頁</button>
+                            <button type="button" class="btn btn-primary next-tab">下一頁</button>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-primary cardTitle">內容</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                            <label class="control-label">內容名稱</label>
+                                                    <input asp-for="PlanName" class="form-control" />
+                                                    <span asp-validation-for="PlanName" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                            <label class="control-label">產品內容</label>
+                                                <textarea asp-for="PlanDescription" class="form-control col-lg-12" rows="20"></textarea>
+                                                    <span asp-validation-for="PlanDescription" class="text-danger"></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                  </div>
+                            <button type="button" class="btn btn-primary prev-tab">上一頁</button>
+                            <button type="button" class="btn btn-primary next-tab">下一頁</button>
+                             </div>
+                            <div class="tab-pane fade" id="tripdetail" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                <div class="row">
+                                        <div class="col-md-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary cardTitle">現有行程</h6>
+                                    </div>
+                                    <div class="card-body" id="contentContainer">
+                                        <ul id="sortable">
+
+                                                @{
+                                                    int i = 0;
+                                                    foreach (TripDetail t in Model.CtripDetail)
+                                                    {
+
+                                                                <li id="ui-state-default" class="draggableUnit">
+                                                                <div class="card mb-3">
+                                                                    <div class="row g-0">
+                                                                        <div class="col-md-4">
+                                                                                @if (t.ImagePath == null)
+                                                                        {
+                                                                                    <img src="~/icons/logos/Logo_traveldate.png" class="img-fluid rounded-start" id="imgPreview-@i" alt="...">
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                                    <img src="~/images/@t.ImagePath" class="img-fluid rounded-start" id="imgPreview-@i" alt="...">
+                                                                        }
+
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                            <div class="card-body">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="card-title">第 @t.TripDay 天</h5>
+
+                                                                                </div>
+                                                                                    <input type="hidden" name="triptest[@i].ImagePath" value="@t.ImagePath"/>
+                                                                                <input type="hidden" id="photoInput" name="triptest[@i].TripDay" value="@t.TripDay" />
+                                                                                <input type="hidden" id="photoInput" name="triptest[@i].TripDetailId" value="@t.TripDetailId" />
+                                                                                    <input type="file" class="form-control" name="triptest[@i].photo" id="uploadImage-@i" />
+                                                                                <textarea class="col-lg-12 card-text" id="descriptionInput" name="triptest[@i].TripDetail" rows="8">@t.TripDetail1</textarea>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        i++;
+                                                    }
+                                                }
+
+                                             </ul>
+
+                                    </div>
+                                </div>
+                                        
+                                </div>
+                                
+                               </div>
+                            <button type="button" class="btn btn-primary prev-tab" style="float:left">上一頁</button>
+                            <div class="form-group text-right">
+                                <input type="submit" value="修改並儲存" class="btn btn-primary" id="EditProduct" />
+                                <a asp-action="List" class="btn btn-primary text-right">取消</a>
+
+
+                            </div>
+                            
+
+                        </div>
+
+                </form>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+            $('#EditProduct').click(function(){
+                swal("產品編輯成功！", "稍後將自動為您導向", "success");
+            });
+
+                    $('.next-tab').click(function () {
+                        const $activeTab = $('.tab-pane.active');
+                        const $nextTab = $activeTab.next('.tab-pane');
+
+                        if ($nextTab.length > 0) {
+                            $activeTab.removeClass('active');
+                            $nextTab.addClass('active');
+
+                            // 激活对应的标签按钮
+                            const targetId = $nextTab.attr('id');
+                            $(`[data-bs-target="#${targetId}"]`).tab('show');
+                        }
+                    });
+
+                    // 点击上一个按钮
+                    $('.prev-tab').click(function () {
+                        const $activeTab = $('.tab-pane.active');
+                        const $prevTab = $activeTab.prev('.tab-pane');
+
+                        if ($prevTab.length > 0) {
+                            $activeTab.removeClass('active');
+                            $prevTab.addClass('active');
+
+                            // 激活对应的标签按钮
+                            const targetId = $prevTab.attr('id');
+                            $(`[data-bs-target="#${targetId}"]`).tab('show');
+                        }
+                    });
+
+
+                    $(function () {
+                        $("#sortable").sortable({
+                            revert: true
+                        });
+                        $("#draggable").draggable({
+                            connectToSortable: "#sortable",
+                            helper: "clone",
+                            revert: "invalid"
+                        });
+                        $("ul, li").disableSelection();
+                    });
+
+                    $(document).ready(function () {
+                        // 更新天数和其他值的函数
+                        function updateValues() {
+                            // 获取所有排序后的区块
+                            const sortedBlocks = $("#sortable").find(".draggableUnit");
+
+                            // 遍历所有区块并重新计算天数和其他值
+                            sortedBlocks.each(function (index) {
+                                const newDay = index + 1; // 计算新的天数，从1开始
+                                const newI = index; // 计算新的i值，从0开始
+
+                                // 更新天数
+                                $(this).find(".card-title").text(`第${newDay}天`);
+
+                                // 更新隐藏字段的值和name属性
+                                $(this).find("input, textarea").each(function () {
+                                    const fieldName = $(this).attr("name");
+                                    let fieldType = "";
+
+                                    if (fieldName.includes("TripDay")) {
+                                        fieldType = "TripDay";
+                                    } else if (fieldName.includes("photo")) {
+                                        fieldType = "photo";
+                                    } else if (fieldName.includes("TripDetailId")) {
+                                        fieldType = "TripDetailId";
+                                    } else if (fieldName.includes("ImagePath")){
+                                        fieldType = "ImagePath";
+                                    } else if (fieldName.includes("TripDetail")){
+                                        fieldType = "TripDetail";
+                                    }
+
+                                    if (fieldType !== "") {
+                                        const newName = `triptest[${newI}].${fieldType}`;
+                                        $(this).attr("name", newName);
+                                        if (fieldType === "TripDay") {
+                                            $(this).val(newDay);
+                                        }
+                                    }
+                                });
+                            });
+                        }
+
+                        // 绑定 Close 按钮点击事件，删除所在区块并调用更新函数
+                        $(document).on("click", ".btn-close", function () {
+                            $(this).closest(".draggableUnit").remove();
+                            // 调用更新函数
+                            updateValues();
+                        });
+
+                        // 初始化 Sortable
+                        $("#sortable").sortable({
+                            update: function (event, ui) {
+                                // 调用更新函数
+                                updateValues();
+                            },
+                        });
+
+                        // 初始排序
+                        $("#sortable").disableSelection();
+                    });
+
+                    $(document).ready(function () {
+                        $(document).on('change', 'input[type="file"]', function () {
+                            var fileInput = this;
+                            var imgId = $(fileInput).attr('id').replace('uploadImage-', 'imgPreview-');
+                            var imgPreview = $('#' + imgId);
+
+                            if (fileInput.files && fileInput.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    imgPreview.attr('src', e.target.result);
+                                };
+
+                                reader.readAsDataURL(fileInput.files[0]);
+                            } else {
+                                // 如果没有选择文件，你可以设置一个默认的图片，例如：
+                                imgPreview.attr('src', "@Url.Content("~/icons/logos/Logo_traveldate.png")");
+
+                                // 或者隐蔽<img>元素
+                                // imgPreview.hide();
+                            }
+                        });
+                    });
+    </script>
+    }
+    <script src="~/js/search_jq.js"></script>
+}
+@section Styles{
+    <style>
+        .card-body {
+            height: unset;
+        }
+
+        .cardTitle {
+            font-size: 25px;
+        }
+    </style>
+ }
+

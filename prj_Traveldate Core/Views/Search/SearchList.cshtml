@@ -1,0 +1,542 @@
+﻿
+
+@using X.PagedList.Mvc.Core;
+@using prj_Traveldate_Core.Models;
+@using prj_Traveldate_Core.ViewModels;
+@model CSearchListViewModel
+@{
+    ViewData["Title"] = "SearchList";
+}
+
+@section Styles{
+    <link href="~/css/calendar-style.css" rel="stylesheet" />
+    <link href="~/css/search_rating.css" rel="stylesheet" />
+    <style>
+        .card-body{
+            padding: 15px;
+            height: 300px;
+        }
+        .card{
+            border:0px solid white;
+           
+        }
+        .card:hover{
+                box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .pagination > li > a {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+            color: #4F4F4F;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+    }
+        
+        .pagination > .active {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #fff;
+            background-color: #155074;
+            border: 1px solid #dee2e6;
+        }
+
+        
+        .page-link-cust {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #4F4F4F;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+        }
+        .my-fs-md{
+            font-size:18px;
+        }
+        .my-fs-lg{
+            font-size: 24px;
+        }
+    </style>
+}
+
+<h4 id="from-home-page-tags" class="fw-bolder"></h4>
+<div class="row justify-content-center">
+    <div class="col-3 g-0 ps-2 pe-2 me-4">
+        <div class="my-calendar filter_block pt-2 pb-2">
+            <div class="d-flex align-items-center">
+                <img class="calendar-static ms-4 me-2" src="~/icons/icons8-calendar-32.png" />
+                <img class="calendar-gif ms-4 me-2" src="~/icons/icons8-calendar.gif" width="32" height="32" />
+                <span class="fs-4 fw-bolder">篩選旅遊日期</span>
+            </div>
+            <div class="calendar-section calendar-container">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <div class="calendar calendar-first" id="calendar_first">
+                            <div class="calendar_header d-flex justify-content-center align-items-center">
+                                <button class="switch-month switch-left">
+                                    <i class="fa fa-chevron-left"></i>
+                                </button>
+                                <div class="d-flex align-items-center">
+                                    <span id="year_f" class="year"></span><span>年</span>
+                                    <span id="month_f" class="month"></span><span>月</span>
+                                </div>
+                                <button class="switch-month switch-right">
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar_weekdays"></div>
+                            <div class="calendar_content"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="calendar calendar-second" id="calendar_second">
+                            <div class="calendar_header d-flex justify-content-center align-items-center">
+                                <button class="switch-month switch-left">
+                                    <i class="fa fa-chevron-left"></i>
+                                </button>
+                                <div class="d-flex align-items-center">
+                                    <span id="year_s" class="year"></span><span>年</span>
+                                    <span id="month_s" class="month"></span><span>月</span>
+                                </div>
+                                <button class="switch-month switch-right">
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar_weekdays"></div>
+                            <div class="calendar_content"></div>
+                        </div>
+                    </div>
+                </div> <!-- End Row -->
+            </div> <!-- End Calendar -->
+        </div>
+        <div class="filter_block">
+            <label class="fs-4 ps-3 pt-1 form-label fw-bolder" for="customRange1">篩選價格</label>
+            <div class="mt-4">
+                <section class="range-slider range-container pb-3">
+                    <span class="output outputOne pl-1 pr-1"></span>
+                    <span class="output outputTwo pl-1 pr-1"></span>
+                    <span class="full-range"></span>
+                    <span class="incl-range"></span>
+                    <input id="rangeOne" name="rangeOne" value="@Model.filterProducts.Min(n=>n.price)" min="@Model.filterProducts.Min(n=>n.price)" max="@Model.filterProducts.Max(n=>n.price)" step="1" type="range">
+                    <input id="rangeTwo" name="rangeTwo" value="@Model.filterProducts.Max(n=>n.price)" min="@Model.filterProducts.Min(n=>n.price)" max="@Model.filterProducts.Max(n=>n.price)" step="1" type="range">
+                </section>
+                <div class="d-flex justify-content-center">
+                    <input id="btn_filter_price" class="btn btn-outline-secondary" type="button" value="搜尋" />
+                </div>
+            </div>
+        </div>
+        <div class="filter_block ">
+            <div class="flex-column">
+                <label class="fs-4 pl-2 pt-2 fw-bolder">篩選目的地</label>
+                @* @using (Html.BeginForm())
+                { *@
+                    <div class="d-flex align-items-center search_container position-relative">
+                        <img class="search-icon-static me-3" src="~/icons/icons8-search-static-32.png">
+                        <img class="search-icon-gif me-3" src="~/icons/icons8-search.gif" width="32" height="32">
+                        <input type="text" id="inputKeyword" name="txtKeyword" class="search-input" placeholder="搜尋目的地">
+                        <img class="clearKeyword" src="~/icons/icons8-x-30.png" />
+                    </div>
+              @* } *@
+            </div>
+            
+            @foreach (var city in Model.countryAndCities)
+            {
+                <div class="controls-display-row category-click">
+                    <span class="fs-4">@Html.DisplayFor(modelItem => city.country) (@city.citys.Distinct().Count())</span>
+                    <div>
+                        <img id="arrow_bottom_down" src="~/icons/arrow_bottom_down_icon.png">
+                        <img id="arrow_top_up" src="~/icons/arrow_top_up_icon.png">
+                    </div>
+                </div>
+                <div class="ms-lg-4 country filter-block-toggle">
+                    <ul class="list-unstyled divFiltered_city" id="divCityList">
+                        @foreach (var t in city.citys.Distinct())
+                        {
+                            var cityCount = city.citys.Count(c => c == t);
+                            <li id="@Html.DisplayFor(modelItem => t)" class=" d-flex align-items-center divide-line my-w-80-percent">
+                                <img class="uncheckbox" src="~/icons/icons8-unchecked-32.png" />
+                                <img class="checkbox" src="~/icons/icons8-checkbox-32.png" />
+                                <span>@Html.DisplayFor(modelItem => t)</span><label class="mb-0"> (@cityCount)</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            
+        </div>
+        
+        <div class="filter_block">
+            <label class="fs-4 pl-2 pt-2 fw-bolder">依旅遊類別</label>
+            @foreach (var c in Model.categoryAndTags)
+            {
+                <div class="controls-display-row category-click">
+                    <span class="fs-5">@Html.DisplayFor(modelItem => c.category) (@c.tags.Distinct().Count())</span>
+                    <div class="d-flex justify-content-end">
+                        <img id="arrow_bottom_down" src="~/icons/arrow_bottom_down_icon.png">
+                        <img id="arrow_top_up" src="~/icons/arrow_top_up_icon.png">
+                    </div>
+                </div>
+                <div class="ms-lg-4 filter-block-toggle">
+                    <ul class="list-unstyled divFiltered_tag">
+                        @foreach (var t in c.tags.Distinct())
+                        {
+                            var tagsCount = c.tags.Count(c => c == t);
+                            <li class=" d-flex align-items-center divide-line my-w-80-percent">
+                                <img class="uncheckbox" src="~/icons/icons8-unchecked-32.png" />
+                                <img class="checkbox" src="~/icons/icons8-checkbox-32.png" />
+                                <span>@Html.DisplayFor(modelItem => t)</span><label class="mb-0">(@tagsCount)</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+        <div class="filter_block">
+            <div class="controls-display-row category-click pt-2">
+                <span class="fs-4 fw-bolder">依旅遊性質 (@Model.types.Distinct().Count())</span>
+                <div>
+                    <img id="arrow_bottom_down" src="~/icons/arrow_bottom_down_icon.png">
+                    <img id="arrow_top_up" src="~/icons/arrow_top_up_icon.png">
+                </div>
+            </div>
+            <div class="ms-lg-4 filter-block-toggle">
+                <ul class="list-unstyled divFiltered_type">
+                    @foreach (var type in Model.types.Distinct())
+                    {
+                        var typeCount = Model.types.Count(t => t == type);
+                        <li class=" d-flex align-items-center divide-line my-w-80-percent">
+                            <img class="uncheckbox" src="~/icons/icons8-unchecked-32.png" />
+                            <img class="checkbox" src="~/icons/icons8-checkbox-32.png" />
+                            <span>@Html.DisplayFor(modelItem => type)</span><label class="mb-0">(@typeCount)</label>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 g-0 justify-content-end">
+        <div class="row g-0">
+            <div class="col-12 filter_block">
+                <div class="divide-line pl-3">
+                    <span id="total" class="fs-3 fw-bolder me-2">@Model.filterProducts.Count()</span><span class="fs-5 my-text-primary">
+                        <img src="~/icons/icons8-rhombus-loader.gif" class="d-none loading-icon" />
+                        項體驗行程
+                        </span>
+                    <div id="selected-checkboxes"><input type="button" class="btn btn-secondary d-none cleanAll mr-1" value="清除全部" onclick="clearAllFiltered()" /></div>
+                    
+                </div>
+                <div class="sort d-flex align-items-center fs-6 my-text-primary pl-3">
+                    <span class=" fw-bolder ">排序 : </span>
+                    <span>　</span>
+                    <a id="sortByHot" href="#" class=" fw-bolder" name="status">熱門程度</a>
+                    <span>　|　</span>
+                    <a id="sortByCommet" href="#" class=" fw-bolder" name="status">用戶評價</a>
+                    <span>　|　</span>
+                    <a id="sortByPrice" href="#" class=" fw-bolder" name="status">價格排序(低到高)</a>
+                    <span>　|　</span>
+                    <a id="sortByStock" href="#" class=" fw-bolder" name="status">即將額滿</a>
+                </div>
+            </div>
+            <h5 id="status"></h5>
+            <div class="alert alert-light d-none">
+                <img src="~/icons/icons8-rhombus-loader.gif" class="loading-icon" />
+            </div>
+            <div id="filteredBody">
+                @try{
+                    foreach (var item in Model.pages)
+                    {
+                        string salesCount = "";
+                        if (item.orederCount > 1000)
+                        {
+                            salesCount = $"{item.orederCount / 1000} K+ 個已訂購";
+                        }
+                        else
+                        {
+                            salesCount = $"{item.orederCount} 個已訂購";
+                        }
+
+                        @* <input type="hidden" value="@Html.DisplayFor(modelItem => item.productTags)" /> *@
+                        <a asp-action="Product" asp-controller="Program" asp-route-id="@item.productID" class="text-secondary">
+                            <div class="card mb-3 col-12 p-0">
+                                <div class="row g-0">
+                                    <div class="col-md-4 pr-0 ">
+                                        @if (item.photoPath != null)
+                                        {
+                                            <div class="overflow-hidden my-rounded-start d-flex justify-content-center" style="background:#408080	">
+                                                <img src="~/images/@item.photoPath" alt="@item.productName" height="300" />
+                                            </div>
+                                        }
+
+                                        else
+                                        {
+                                            <div class="overflow-hidden my-rounded-start my-bg-primary d-flex justify-content-center">
+                                                <img src="~/icons/logos/Logo_traveldate.png" alt="@item.productName" height="300" />
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div class="col-md-8 pl-0">
+                                        <div class="card-body d-flex justify-content-around row">
+                                            <div class="pl-4 pr-4">
+                                                <h5 class="card-title fw-bold ">@Html.DisplayFor(modelItem => item.productName)</h5>
+                                                <p class="card-text  mb-2 my-fs-md">@Html.DisplayFor(modelItem => item.outlineForSearch) </p>
+                                                <p class="card-text">
+                                                    <span class="text-body-secondary bg-gradient-secondary text-white fw-bolder rounded p-1">@Html.DisplayFor(modelItem => item.date) 後</span>
+                                                     <img src="~/icons/icons8-position-16.png"><span class="text-body-secondary bg-gradient-warning text-white fw-bolder rounded p-1">@Html.DisplayFor(modelItem => item.city) </span>
+                                                    <span class="text-body-secondary">
+                                                         <img src="~/icons/icons8-tag-16.png"> @foreach (var t in item.productTags)
+                                                        {
+                                                            <label class="bg-gradient-info rounded m-0 pr-1 pl-1 text-white fw-bolder">#@t&thinsp;</label>
+                                                        }
+                                                    </span>
+                                                     <img src="~/icons/icons8-category-24.png" /><label class="bg-gradient-success rounded m-0 pr-1 pl-1 text-white fw-bolder">@item.type</label>
+                                                </p>
+                                            </div>
+                                            <div class="row align-items-end">
+                                                <div class="col d-flex align-items-center p-0">
+                                                    <div class="rectangle-container me-2 d-flex position-relative">
+                                                        <div class="rectangle"></div>
+                                                        <img class="star-rating" src="~/icons/star-rating.png">
+                                                        <input type="hidden" id="rating-value" value="@item.commentAvgScore">
+                                                    </div>
+                                                    <span class="text-body-secondary">@Html.DisplayFor(modelItem => item.strComment)</span>
+                                                    <span class="text-body-secondary"> | <img src="~/icons/icons8-ticket-16.png">  @salesCount</span>
+                                                    @if (!string.IsNullOrEmpty(item.strProdStock) && item.strProdStock.Contains("即將額滿"))
+                                                    {
+                                                        <span class="text-body-secondary fw-bolder text-black"> | <img src="~/icons/icons8-fire-16.png" />  @item.strProdStock</span>
+                                                    }
+                                                    else if (!string.IsNullOrEmpty(item.strProdStock) && item.strProdStock.Contains("已額滿"))
+                                                    {
+                                                        <span class="text-body-secondary fw-bolder text-black"> | <img src="~/icons/icons8-sold-out-32.png" height="16" />  @item.strProdStock</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-body-secondary fw-bolder text-black"> |  @item.strProdStock</span>
+                                                    }
+                                                    <div>
+                                                        <span class="card-text fs-5 fw-bolder text-end ml-3"><span>TWD </span>@Html.DisplayFor(modelItem => item.price)<span class="fs-6 fw-normal">起</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+                catch(Exception ex)
+                {
+                    <h1>網頁發生錯誤，請聯絡管理員</h1>
+                }
+                
+       
+            <div class="d-flex justify-content-center bg-transparent border-0">
+                    <div class="col-7 d-flex justify-content-around">
+                        @Html.PagedListPager(Model.pages, page => Url.Action("SearchList", new { page}))
+                    </div>
+            </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function handleError() {
+            try {
+                // 在這裡放置可能會拋出錯誤的JavaScript代碼
+            } catch (error) {
+                // 在這裡處理錯誤，可以將錯誤信息記錄到控制台或其他地方
+                console.error(error);
+
+                // 將網頁導向到指定的控制器和動作
+                window.location.href = '@Url.Action("Error", "Error")';
+            }
+        }
+    </script>
+        <script src="~/js/wait_icon_function.js"></script>
+    <script>
+        var selectedTags = [];
+        var selectedCities = [];
+        var selectedTypes = [];
+        var startTime=""
+        var endTime = ""
+        let minPrice = ""
+        let maxPrice = ""
+        var pageNumber = 1;
+        function filteredByConditions() {
+           showLoadingIcon()
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("FilterByConditions", "Search")",
+                data: {
+                    tags: selectedTags, cities: selectedCities, types: selectedTypes,
+                    startTime: startTime, endTime: endTime,
+                    minPrice: minPrice, maxPrice: maxPrice,
+                   page: pageNumber
+                },
+                success: function (response) {
+                    $('#status').text("")
+                    hideLoadingIcon()
+                    $('#filteredBody').html(response)
+                    roadRating()
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    var resultCount = $('#updateTotal').val()
+                    $('#total').html(resultCount)
+                    //20230830  09:00 好像不用加 ????
+                     // $(".pagination > a").filter(function () {
+                     //     return $(this).text() === pageNumber.toString();
+                     // }).addClass("active");
+                
+                },
+                error: function (error) {
+                    console.log("發生錯誤：", error);
+                }
+            });
+        }
+    </script>
+
+    <script src="~/js/mutiRange.js"></script>
+    <script src="~/js/calender-main.js"></script>
+        <script src="~/js/search_jq.js"></script>
+    <script src="~/js/search_rating.js"></script>
+    
+    
+    <script>
+        roadRating()
+
+        //////////////////////////////////////4種排序///////////////////////////////////////////
+        
+        //排序/篩選載入資料
+        function loadData(status) {
+            fetch('@Url.Action("sortBy", "Search")?' + status, {
+                method: 'GET',
+            })
+                .then(response => response.text())
+                .then(data => {
+                    
+                    $('#filteredBody').html(data);
+                    $('#from-home-page-tags').text("")
+                    roadRating()
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth' 
+                        });
+                })
+        }
+        //用來把mvc生成的分頁再變成網址當參數回傳給loadData當參數並讓生成的PartialView長在畫面上
+            $(document).on('click', '.pagedList a', function (event) {
+                event.preventDefault();
+                const queryString = $(this).attr('href').split('?')[1]; // 取得 URL 的查詢字串
+                const queryParams = new URLSearchParams(queryString); // 解析查詢字串為參數集合
+
+                // 取得 分頁連結中 sortType 和 page 參數的值
+                const sortType = queryParams.get('sortType');
+                const page = queryParams.get('page');
+                console.log(`sortType=${sortType}&page=${page}`)
+                // 傳遞給 loadData 函式
+                loadData(`sortType=${sortType}&page=${page}`);
+            });
+        //by熱門
+        const sortByHot = document.querySelector('#sortByHot');
+        sortByHot.addEventListener('click',()=>{
+            loadData("sortType=hot")
+            $('#status').text('依"' + sortByHot.innerText + '"排序')
+        })
+        //by評價
+        const sortByCommet = document.querySelector('#sortByCommet');
+        sortByCommet.addEventListener('click', () => {
+            loadData("sortType=comment")
+            $('#status').text('依"' + sortByCommet.innerText + '"排序')
+        })
+        //by價格
+        const sortByPrice = document.querySelector('#sortByPrice');
+        sortByPrice.addEventListener('click', () => {
+            loadData("sortType=price")
+            $('#status').text('依"' + sortByPrice.innerText + '"排序')
+        })
+        //by庫存
+        const sortByStock = document.querySelector('#sortByStock');
+        sortByStock.addEventListener('click', () => {
+            loadData("sortType=stock")
+            $('#status').text('依"' + sortByStock.innerText + '"排序')
+        })
+      
+    </script>
+    <script>
+        const inputKeyword = document.querySelector('#inputKeyword');
+        const divCityList = document.querySelector('#divCityList');
+        inputKeyword.addEventListener('input',()=>{
+            $('#from-home-page-tags').text("")
+            $('.country.filter-block-toggle').show();
+            $('#arrow_bottom_down').hide()
+            $('#arrow_top_up').show()
+            loadCities(inputKeyword.value);
+        })
+        async function loadCities(keyword) {
+            const resopnse = await fetch(`@Url.Content("~/Search/filterCity")?txtKeyword=${keyword}`)
+            const datas = await resopnse.json();
+            if (datas != null && datas.length>0) {
+                const cities = datas.map(city => {
+                    const { cityId, cityName, countCity } = city
+                    return (
+                        `<li id=${cityId} class=" d-flex align-items-center divide-line my-w-80-percent filterCityItem" >
+                                <img class="uncheckbox" src = "/icons/icons8-unchecked-32.png" />
+                                <img class="checkbox" src = "/icons/icons8-checkbox-32.png" />
+                                <span>${cityName}</span><label class="mb-0">(${countCity})</label>
+                        </li>`
+                    )
+                })
+                divCityList.innerHTML = cities.join("");
+                const filterCityItem = document.querySelectorAll('.filterCityItem');
+                filterCityItem.forEach(cityItem => {
+                    cityItem.addEventListener('click', (e) => {
+                        e.preventDefault();
+                    });
+                })
+            } else {
+                // 如果 datas 為空陣列或 null，執行相應處理
+                divCityList.innerHTML = "沒有符合的地區";
+            }
+        }
+    </script>
+   
+   <script>
+        // 解析 URL 中的 query 字串，找到 triggerItem 參數的值
+        const urlParams = new URLSearchParams(window.location.search);
+        const triggerItem = urlParams.get('triggerItem');
+
+        // 根據 triggerImage 的值找到對應的 li 標籤
+        const liElement = $(`#${triggerItem}`);
+async function clickUncheckbox() {
+    await liElement.find('.uncheckbox').click();
+    await $('.country.filter-block-toggle').show();
+    await $('#arrow_bottom_down').hide()
+    await $('#arrow_top_up').show()
+    
+}
+       if (liElement.length > 0) {
+           // 如果找到了 li 標籤，則觸發它的 click 事件
+           clickUncheckbox();
+           $('#from-home-page-tags').text('搜尋"' + triggerItem + '"相關旅程')
+
+        } else if (liElement.length === 0 && triggerItem !== null) {
+            $('#from-home-page-tags').text('無"' + triggerItem + '"相關旅程，看看其他旅程吧!')
+       }
+   </script>
+}
+
+
+
